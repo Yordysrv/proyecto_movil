@@ -1,0 +1,123 @@
+/* Variables generales para temas */
+:root {
+  --color-fondo-claro: #f5f5f5;
+  --color-texto-claro: #1a1a1a;
+  --color-acento-claro: #007bff;
+
+  --color-fondo-oscuro: #1a1a1a;
+  --color-texto-oscuro: #f5f5f5;
+  --color-acento-oscuro: #4dabf7;
+
+  --borde-radius: 12px;
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --espaciado: 16px;
+  --max-width: 800px;
+}
+
+/* Modo claro por defecto */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-claro);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Modo oscuro si el usuario lo prefiere */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-oscuro);
+  }
+
+  input, textarea, select {
+    background-color: #2b2b2b;
+    color: white;
+    border-color: #444;
+  }
+}
+
+/* Estilo general */
+header {
+  background-color: var(--color-acento-claro);
+  color: white;
+  padding: var(--espaciado);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav button {
+  background: white;
+  color: var(--color-acento-claro);
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--borde-radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+nav button:hover {
+  background-color: #e0e0e0;
+}
+
+section, main {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: var(--espaciado);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff88;
+  padding: var(--espaciado);
+  border-radius: var(--borde-radius);
+  box-shadow: var(--sombra);
+}
+
+input, textarea, select {
+  padding: 10px;
+  border-radius: var(--borde-radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button[type="submit"], #btn-publicar {
+  background-color: var(--color-acento-claro);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: var(--borde-radius);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover, #btn-publicar:hover {
+  background-color: #0056b3;
+}
+
+.auth-section.hidden,
+#form-publicacion.hidden {
+  display: none;
+}
+
+#publicaciones-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado);
+  margin-top: var(--espaciado);
+}
+
+/* Responsive: dos columnas en pantallas grandes */
+@media (min-width: 768px) {
+  #publicaciones-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inmuebles RD</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>🏠 Inmuebles RD</h1>
+    <nav>
+      <button id="btn-login">Iniciar Sesión</button>
+      <button id="btn-register">Registrarse</button>
+    </nav>
+  </header>
+
+  <!-- Sección de inicio de sesión -->
+  <section id="login-section" class="auth-section hidden">
+    <h2>Iniciar Sesión</h2>
+    <form id="login-form">
+      <input type="email" placeholder="Correo electrónico" required>
+      <input type="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </section>
+
+  <!-- Sección de registro -->
+  <section id="register-section" class="auth-section hidden">
+    <h2>Registrarse</h2>
+    <form id="register-form">
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <input type="password" placeholder="Contraseña" required>
+      <button type="submit">Crear cuenta</button>
+    </form>
+  </section>
+
+  <!-- Sección principal: publicaciones -->
+  <main>
+    <h2>Propiedades Disponibles</h2>
+    <div id="publicaciones-container">
+      <!-- Aquí se mostrarán las publicaciones -->
+    </div>
+  </main>
+
+  <!-- Botón para publicar -->
+  <section id="publicar-section">
+    <button id="btn-publicar">📤 Publicar Inmueble</button>
+  </section>
+
+  <!-- Formulario de publicación (desbloqueado tras pago) -->
+  <section id="form-publicacion" class="hidden">
+    <h2>Formulario de Publicación</h2>
+    <form id="publicar-form">
+      <input type="text" placeholder="Título de la propiedad" required>
+      <input type="number" placeholder="Precio" required>
+      <select required>
+        <option value="">Seleccionar tipo</option>
+        <option value="venta">Venta</option>
+        <option value="alquiler">Alquiler</option>
+      </select>
+      <textarea placeholder="Descripción detallada" required></textarea>
+      <input type="url" placeholder="Link de WhatsApp (opcional)">
+      <input type="url" placeholder="Link de Instagram (opcional)">
+      <input type="url" placeholder="Link de Facebook (opcional)">
+      <input type="file" accept="image/*" multiple required id="imagen-subida">
+      <p>Máximo 5 imágenes. Las publicaciones caducan en 90 días.</p>
+      <button type="submit">Publicar</button>
+    </form>
+  </section>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
